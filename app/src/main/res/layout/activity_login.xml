@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#5BABE5"
+    tools:context=".LoginActivity">
+
+    ///////////////////////////////////////////////////////////////////////////////
+
+    <TextView
+        android:id="@+id/tv_login_status"
+        android:layout_width="193dp"
+        android:layout_height="55dp"
+        android:layout_below="@+id/suss_img_view"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="102dp"
+        android:width="400dp"
+        android:minWidth="400dp"
+        android:text="SUSS Login"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinputlayout_email"
+        android:layout_width="288dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_login_status"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="56dp"
+        android:textColorHint="#ffffff"
+        app:errorEnabled="true"
+        app:errorTextColor="#ffffff"
+        app:startIconDrawable="@drawable/ic_email">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:drawablePadding="5dp"
+            android:gravity="start"
+            android:hint="Enter Email"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="5dp"
+            android:textColorHint="#ffffff" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinputlayout_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textinputlayout_email"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="57dp"
+        android:textColorHint="#ffffff"
+        app:counterEnabled="true"
+        app:counterMaxLength="8"
+        app:errorEnabled="true"
+        app:errorTextColor="#ffffff"
+        app:passwordToggleEnabled="true"
+        app:startIconDrawable="@drawable/ic_lock">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="296dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:gravity="start"
+            android:hint="Enter Password"
+            android:inputType="textPassword"
+            android:paddingLeft="5dp"
+            android:textColorHint="#ffffff" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="161dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textinputlayout_password"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="126dp"
+        android:backgroundTint="@color/white"
+        android:gravity="start"
+        android:text="Login"
+        android:textAllCaps="true"
+        android:textColor="@color/mainblue"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_registerlink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_login"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="131dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="130dp"
+        android:gravity="start"
+        android:text="Register"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <ImageView
+        android:id="@+id/suss_img_view"
+        android:layout_width="wrap_content"
+        android:layout_height="135dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="99dp"
+        android:layout_marginEnd="85dp"
+        android:foregroundGravity="center|center_horizontal"
+        app:srcCompat="@drawable/suss"
+        tools:srcCompat="@drawable/suss" />
+
+
+</RelativeLayout>

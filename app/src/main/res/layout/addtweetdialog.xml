@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:background="#5BABE5">
+
+    <TextView
+        android:id="@+id/posttitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Post a Note"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinputlayout_tweet"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:layout_below="@+id/posttitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/white"
+        android:hint="Write Your Tweet"
+        android:textColorHint="@color/mainblue"
+        app:counterEnabled="true"
+        app:counterMaxLength="200"
+        app:errorEnabled="true"
+        app:errorTextColor="@color/black">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/white"
+            android:drawablePadding="5dp"
+            android:inputType="textShortMessage"
+            android:paddingLeft="5dp"
+            android:textColor="#000000"
+            android:textColorHint="@color/black"
+            android:textColorLink="#000000" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnaddtweet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textinputlayout_tweet"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/white"
+        android:text="Add"
+        android:textColor="@color/mainblue" />
+
+
+</RelativeLayout>

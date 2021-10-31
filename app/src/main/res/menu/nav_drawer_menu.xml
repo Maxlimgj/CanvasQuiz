@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_lobby"
+            android:icon="@drawable/ic_timetable"
+            android:title="TimeTable" />
+        <item
+            android:id="@+id/nav_notes"
+            android:icon="@drawable/ic_notes"
+            android:title="Notes" />
+        <item
+            android:id="@+id/nav_classroom"
+            android:icon="@drawable/ic_classroom"
+            android:title="Classroom" />
+        <item
+            android:id="@+id/nav_followers"
+            android:icon="@drawable/ic_people"
+            android:title="Followers" />
+        <item
+            android:id="@+id/nav_quiz"
+            android:icon="@drawable/ic_quiz"
+            android:title="Quiz" />
+
+        <item
+            android:id="@+id/nav_fees"
+            android:icon="@drawable/ic_schoolfees"
+            android:title="School Fees" />
+        <item
+            android:id="@+id/nav_Profile"
+            android:icon="@drawable/ic_person"
+            android:title="Profile" />
+
+
+    </group>
+
+    <item android:title="others">
+        <menu>
+            <item
+                android:id="@+id/nav_Share"
+                android:icon="@drawable/ic_share"
+                android:title="Share"></item>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout"
+                android:title="Logout"></item>
+
+        </menu>
+    </item>
+
+
+</menu>

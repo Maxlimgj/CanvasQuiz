@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:id="@+id/reldelete"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/showtweetdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:text="Date"
+        android:textColor="@color/mainblue"
+        android:textSize="16sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/showtweet"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/showtweetdate"
+        android:layout_marginLeft="5dp"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/showtweetemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/showtweet"
+        android:layout_marginLeft="5dp"
+        android:text="Tweet by: "
+        android:textColor="@color/mainblue"
+        android:textSize="16sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/showtweettime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/showtweet"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:text="Time"
+        android:textColor="@color/mainblue"
+        android:textSize="16sp"
+        android:textStyle="italic" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/mainblue" />
+
+
+</RelativeLayout>

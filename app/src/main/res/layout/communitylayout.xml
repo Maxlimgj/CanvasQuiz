@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#5BABE5"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/commName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/commEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/commName"
+        android:text="Email"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/commbtnfollow"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:backgroundTint="@color/white"
+        android:text="Follow"
+        android:textColor="@color/mainblue"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/commbtnunfollow"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="0dp"
+        android:layout_toLeftOf="@id/commbtnfollow"
+        android:backgroundTint="@color/white"
+        android:text="Unfollow"
+        android:textColor="@color/mainblue"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/commPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/commEmail"
+        android:text="Contact Number"
+        android:textColor="@color/white" />
+
+</RelativeLayout>
