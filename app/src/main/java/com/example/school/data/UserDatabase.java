@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.school.ModelClasses.Achievement;
+
 import java.util.ArrayList;
 
 
@@ -90,5 +92,48 @@ public class UserDatabase extends SQLiteOpenHelper {
         cursor.close();
 
         return userAttempts;
+    }
+
+    public int getOverallPoints(String email) {
+        int totalPoints = 0;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery("select sum(earned) from " + TABLE_NAME + " where email='" + email + "'", null);
+        if (c.moveToFirst())
+            totalPoints = c.getInt(0);
+
+        c.close();
+        return totalPoints;
+    }
+
+    public int getTotalQuestions(String email) {
+        int totalQ = 0;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery("select count(*) from " + TABLE_NAME + " where email='" + email + "'", null);
+        if (c.moveToFirst())
+            totalQ = c.getInt(0) * 5;
+
+        c.close();
+        return totalQ;
+    }
+
+    public ArrayList<Achievement> getAchievement() {
+        ArrayList<Achievement> achievements = new ArrayList<>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("Select email,sum(earned) as score from " + TABLE_NAME + " group by email order by score desc", null);
+
+        if (cursor.moveToFirst()) {
+            do {
+
+                Achievement achievement = new Achievement(cursor.getString(0), cursor.getInt(1));
+
+                achievements.add(achievement);
+
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+
+        return achievements;
     }
 }

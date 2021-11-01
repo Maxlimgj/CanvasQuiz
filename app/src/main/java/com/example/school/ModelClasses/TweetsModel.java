@@ -1,20 +1,21 @@
 package com.example.school.ModelClasses;
 
-public class TweetsModel
-{
+public class TweetsModel {
     String email;
     String tweet;
     String time;
     String date;
+    String photo;
 
     public TweetsModel() {
     }
 
-    public TweetsModel(String email, String tweet, String time, String date) {
+    public TweetsModel(String email, String tweet, String time, String date, String photo) {
         this.email = email;
         this.tweet = tweet;
         this.time = time;
         this.date = date;
+        this.photo = photo;
     }
 
     public String getDate() {
@@ -47,5 +48,13 @@ public class TweetsModel
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 }

@@ -27,6 +27,7 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final String DOB_COL = "dob";
     private static final String PHONE_COL = "phone";
     private static final String TWEET_COL = "tweet";
+    private static final String IMAGE_COL = "image";
     private static final String TIME_COL = "time";
     private static final String DATE_COL = "date";
     private static final String FOLLOWING_COL = "following";
@@ -57,7 +58,8 @@ public class DbHelper extends SQLiteOpenHelper {
                 + EMAIL_COL + " TEXT,"
                 + TWEET_COL + " TEXT,"
                 + DATE_COL + " TEXT,"
-                + TIME_COL + " TEXT)";
+                + TIME_COL + " TEXT,"
+                + IMAGE_COL + " TEXT)";
 
         db.execSQL(query1);
 
@@ -188,7 +190,7 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     @SuppressLint("Range")
-    public boolean addTweet(String tweet, String email, String time, String date) {
+    public boolean addTweet(String tweet, String email, String time, String date, String image) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values1 = new ContentValues();
@@ -197,6 +199,7 @@ public class DbHelper extends SQLiteOpenHelper {
         values1.put(TWEET_COL, tweet);
         values1.put(DATE_COL, date);
         values1.put(TIME_COL, time);
+        values1.put(IMAGE_COL, image);
         db.insert(TABLE_TWEETS, null, values1);
         db.close();
         return true;
@@ -208,7 +211,7 @@ public class DbHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
 
-        Cursor cursorCourses = db.rawQuery("SELECT email,tweet,time,date FROM " + TABLE_TWEETS, null);
+        Cursor cursorCourses = db.rawQuery("SELECT email,tweet,time,date,image FROM " + TABLE_TWEETS, null);
 
 
         ArrayList<TweetsModel> tweetModalArrayList = new ArrayList<>();
@@ -219,7 +222,8 @@ public class DbHelper extends SQLiteOpenHelper {
                 tweetModalArrayList.add(new TweetsModel(cursorCourses.getString(0),
                         cursorCourses.getString(1),
                         cursorCourses.getString(2),
-                        cursorCourses.getString(3)));
+                        cursorCourses.getString(3),
+                        cursorCourses.getString(4)));
             } while (cursorCourses.moveToNext());
 
         }

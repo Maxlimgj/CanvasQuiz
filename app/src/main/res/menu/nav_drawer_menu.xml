@@ -12,18 +12,23 @@
             android:id="@+id/nav_notes"
             android:icon="@drawable/ic_notes"
             android:title="Notes" />
-        <item
+       <!-- <item
             android:id="@+id/nav_classroom"
             android:icon="@drawable/ic_classroom"
             android:title="Classroom" />
         <item
             android:id="@+id/nav_followers"
             android:icon="@drawable/ic_people"
-            android:title="Followers" />
+            android:title="Followers" />-->
         <item
             android:id="@+id/nav_quiz"
             android:icon="@drawable/ic_quiz"
             android:title="Quiz" />
+
+        <item
+            android:id="@+id/nav_achievement"
+            android:icon="@drawable/ic_baseline_leaderboard_24"
+            android:title="Achievements" />
 
         <item
             android:id="@+id/nav_fees"

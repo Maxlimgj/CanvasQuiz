@@ -51,7 +51,8 @@ public class HistoryActivity extends AppCompatActivity {
         getAllUserAttemptTask.execute();*/
         ArrayList<Attempt> attempts = new ArrayList<>();
 
-
+        tvTotalQuestions.setText(String.valueOf(userDatabase.getTotalQuestions(email)));
+        tvTotalPoints.setText(String.valueOf(userDatabase.getOverallPoints(email)));
 
     }
 

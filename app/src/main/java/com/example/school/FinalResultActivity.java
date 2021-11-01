@@ -87,7 +87,7 @@ public class FinalResultActivity extends AppCompatActivity {
         tvCorrect.setText(String.valueOf(correctAnswer));
         tvIncorrect.setText(String.valueOf(incorrectAnswer));
         tvEarned.setText(String.valueOf(earnedPoints));
-       // tvOverallStatus.setText(String.valueOf(attempt.getOverallPoints()));
+        tvOverallStatus.setText(String.valueOf(userDatabase.getOverallPoints(email)));
         tvDate.setText(Utils.formatDate(Calendar.getInstance().getTimeInMillis()));
     }
 
@@ -100,41 +100,41 @@ public class FinalResultActivity extends AppCompatActivity {
         finish();
     }
 
-   /* private void getOverAllPoints(Attempt attempt) {
-        GetOverallPointsTask getOverallPointsTask = new GetOverallPointsTask(attempt);
-        getOverallPointsTask.execute();
-    }
+    /* private void getOverAllPoints(Attempt attempt) {
+         GetOverallPointsTask getOverallPointsTask = new GetOverallPointsTask(attempt);
+         getOverallPointsTask.execute();
+     }
 
-    class GetOverallPointsTask extends AsyncTask<Void, Void, Void> {
+     class GetOverallPointsTask extends AsyncTask<Void, Void, Void> {
 
-        private final Attempt attempt;
-        private int overallPoints = 0;
+         private final Attempt attempt;
+         private int overallPoints = 0;
 
-        public GetOverallPointsTask(Attempt attempt) {
-            this.attempt = attempt;
-        }
+         public GetOverallPointsTask(Attempt attempt) {
+             this.attempt = attempt;
+         }
 
-        @Override
-        protected Void doInBackground(Void... voids) {
-            UserDatabase databaseClient = UserDatabaseClient.getInstance(getApplicationContext());
-            overallPoints = databaseClient.userDao().getOverAllPoints(attempt.getEmail());
-            return null;
-        }
+         @Override
+         protected Void doInBackground(Void... voids) {
+             UserDatabase databaseClient = UserDatabaseClient.getInstance(getApplicationContext());
+             overallPoints = databaseClient.userDao().getOverAllPoints(attempt.getEmail());
+             return null;
+         }
 
-        @RequiresApi(api = Build.VERSION_CODES.N)
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
+         @RequiresApi(api = Build.VERSION_CODES.N)
+         @Override
+         protected void onPostExecute(Void aVoid) {
+             super.onPostExecute(aVoid);
 
-            attempt.setOverallPoints(overallPoints + attempt.getEarned());
-            displayData(attempt);
-            SaveUserAttemptTask saveUserAttemptTask = new SaveUserAttemptTask(attempt);
-            saveUserAttemptTask.execute();
+             attempt.setOverallPoints(overallPoints + attempt.getEarned());
+             displayData(attempt);
+             SaveUserAttemptTask saveUserAttemptTask = new SaveUserAttemptTask(attempt);
+             saveUserAttemptTask.execute();
 
-            Log.d("OVERALL POINTS", String.valueOf(overallPoints));
-        }
-    }
-*/
+             Log.d("OVERALL POINTS", String.valueOf(overallPoints));
+         }
+     }
+ */
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void displayData(Attempt attempt) {
 

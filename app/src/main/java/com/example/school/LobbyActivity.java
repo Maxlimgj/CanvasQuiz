@@ -83,7 +83,7 @@ public class LobbyActivity extends AppCompatActivity {
                                 .commit();
                         menuClick.start();
                         break;
-                    case R.id.nav_classroom:
+                   /* case R.id.nav_classroom:
                         toolbar.setTitle("Classroom");
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.fragment_container, new ClassroomFragment())
@@ -96,11 +96,18 @@ public class LobbyActivity extends AppCompatActivity {
                                 .replace(R.id.fragment_container, new FollowersFragment())
                                 .commit();
                         menuClick.start();
-                        break;
+                        break;*/
                     case R.id.nav_quiz:
                         toolbar.setTitle("Quiz");
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.fragment_container, new QuizFragment())
+                                .commit();
+                        menuClick.start();
+                        break;
+                    case R.id.nav_achievement:
+                        toolbar.setTitle("Achievements");
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.fragment_container, new AchievementFragment())
                                 .commit();
                         menuClick.start();
                         break;

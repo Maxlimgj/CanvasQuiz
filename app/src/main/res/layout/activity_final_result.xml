@@ -53,6 +53,16 @@
         app:layout_constraintTop_toBottomOf="@+id/tvWellDone" />
 
     <TextView
+        android:id="@+id/textView39"
+        style="@style/text_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/total_questions"
+        app:layout_constraintStart_toStartOf="@+id/tvWellDone"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
         android:id="@+id/textView11"
         style="@style/text_heading"
         android:layout_width="wrap_content"
@@ -60,7 +70,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/correct"
         app:layout_constraintStart_toStartOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/textView39" />
 
     <TextView
         android:id="@+id/textView12"
@@ -113,6 +123,17 @@
         app:layout_constraintTop_toTopOf="@+id/textView10"
         tools:text="Math" />
 
+    <TextView
+        android:id="@+id/textView49"
+        style="@style/text_value_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView39"
+        app:layout_constraintStart_toEndOf="@+id/textView39"
+        app:layout_constraintTop_toTopOf="@+id/textView39"
+       android:text="5" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnFinishQuiz"
         style="@style/btnStyle"
@@ -126,6 +147,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
 
     <TextView
         android:id="@+id/textView19"
