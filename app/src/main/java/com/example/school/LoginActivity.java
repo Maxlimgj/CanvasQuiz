@@ -1,39 +1,26 @@
 package com.example.school;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ObjectAnimator;
-import android.app.ActivityManager;
-import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
-import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
-import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.school.Helper.DbHelper;
 import com.google.android.material.textfield.TextInputLayout;
-
-import java.io.IOException;
-import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
     TextView registerlink, textView;
@@ -57,6 +44,9 @@ public class LoginActivity extends AppCompatActivity {
             intent.putExtra("Email", email);
             startActivity(intent);
             finish();
+        }else{
+            maplestory = MediaPlayer.create(LoginActivity.this, R.raw.maplestory_wav);
+            maplestory.start();
         }
 
         textView = findViewById(R.id.tv_login_status);
@@ -95,8 +85,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        maplestory = MediaPlayer.create(LoginActivity.this, R.raw.maplestory_wav);
-        maplestory.start();
+
 
         mEmailInputLayout = findViewById(R.id.textinputlayout_email);
         mPasswordInputLayout = findViewById(R.id.textinputlayout_password);

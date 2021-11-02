@@ -1,5 +1,6 @@
 package com.example.school;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +25,7 @@ public class AchievementFragment extends Fragment {
     private RecyclerView recyclerView;
     private List<Achievement> achievementList;
     private UserDatabase userDatabase;
-
+    MediaPlayer celebrate;
 
     @Nullable
     @Override
@@ -33,6 +34,8 @@ public class AchievementFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.recycler);
 
+        celebrate = MediaPlayer.create(getContext(), R.raw.celebrationeffect);
+        celebrate.start();
 
         userDatabase = new UserDatabase(getContext());
 

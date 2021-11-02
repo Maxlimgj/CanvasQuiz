@@ -1,6 +1,7 @@
 package com.example.school;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +28,7 @@ public class GeographyOrLiteratureQuizActivity extends AppCompatActivity {
     private List<String> questions;
     private int correctQuestion = 0;
     private Map<String, Map<String, Boolean>> questionsAnswerMap;
+    MediaPlayer quiz;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +38,17 @@ public class GeographyOrLiteratureQuizActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String subject = intent.getStringExtra(Constants.SUBJECT);
 
+        quiz = MediaPlayer.create(GeographyOrLiteratureQuizActivity.this, R.raw.dingdong);
+        quiz.start();
+        quiz.setLooping(true);
+
         TextView tvTitle = findViewById(R.id.textView26);
 
         if (subject.equals(getString(R.string.literature))) {
-            questionsAnswerMap = Utils.getRandomLiteratureAndGeographyQuestions(this,getString(R.string.literature),Constants.QUESTION_SHOWING);
+            questionsAnswerMap = Utils.getRandomLiteratureAndGeographyQuestions(this, getString(R.string.literature), Constants.QUESTION_SHOWING);
             tvTitle.setText(getString(R.string.literature_quiz));
-        }else{
-            questionsAnswerMap = Utils.getRandomLiteratureAndGeographyQuestions(this,getString(R.string.geography),Constants.QUESTION_SHOWING);
+        } else {
+            questionsAnswerMap = Utils.getRandomLiteratureAndGeographyQuestions(this, getString(R.string.geography), Constants.QUESTION_SHOWING);
             tvTitle.setText(getString(R.string.geography_quiz));
         }
         questions = new ArrayList<>(questionsAnswerMap.keySet());
@@ -62,22 +68,22 @@ public class GeographyOrLiteratureQuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                RadioButton radioButton =  findViewById(radioGroup.getCheckedRadioButtonId());
+                RadioButton radioButton = findViewById(radioGroup.getCheckedRadioButtonId());
                 boolean answer = questionsAnswerMap.get(questions.get(currentQuestionIndex)).get(radioButton.getText());
 
-                if (answer){
+                if (answer) {
                     correctQuestion++;
                 }
 
                 currentQuestionIndex++;
 
-                if (btnNext.getText().equals(getString(R.string.next))){
+                if (btnNext.getText().equals(getString(R.string.next))) {
                     displayNextQuestions();
-                }else{
-                    Intent intentResult = new Intent(GeographyOrLiteratureQuizActivity.this,FinalResultActivity.class);
-                    intentResult.putExtra(Constants.SUBJECT,subject);
-                    intentResult.putExtra(Constants.CORRECT,correctQuestion);
-                    intentResult.putExtra(Constants.INCORRECT,Constants.QUESTION_SHOWING - correctQuestion);
+                } else {
+                    Intent intentResult = new Intent(GeographyOrLiteratureQuizActivity.this, FinalResultActivity.class);
+                    intentResult.putExtra(Constants.SUBJECT, subject);
+                    intentResult.putExtra(Constants.CORRECT, correctQuestion);
+                    intentResult.putExtra(Constants.INCORRECT, Constants.QUESTION_SHOWING - correctQuestion);
                     intentResult.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intentResult);
                     finish();
@@ -101,7 +107,7 @@ public class GeographyOrLiteratureQuizActivity extends AppCompatActivity {
         tvQuestion.setText(questions.get(currentQuestionIndex));
         tvQuestionNumber.setText("Current Question: " + (currentQuestionIndex + 1));
 
-        if (currentQuestionIndex == Constants.QUESTION_SHOWING  - 1){
+        if (currentQuestionIndex == Constants.QUESTION_SHOWING - 1) {
             btnNext.setText(getText(R.string.finish));
         }
     }
@@ -113,7 +119,7 @@ public class GeographyOrLiteratureQuizActivity extends AppCompatActivity {
         setAnswersToRadioButton();
     }
 
-    private void setAnswersToRadioButton(){
+    private void setAnswersToRadioButton() {
 
         ArrayList<String> questionKey = new ArrayList(questionsAnswerMap.get(questions.get(currentQuestionIndex)).keySet());
 
@@ -123,5 +129,12 @@ public class GeographyOrLiteratureQuizActivity extends AppCompatActivity {
         radioButton4.setText(questionKey.get(3));
 
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        quiz.release();
+    }
+
 
 }

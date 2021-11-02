@@ -1,6 +1,7 @@
 package com.example.school;
 
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -24,6 +25,7 @@ public class HistoryActivity extends AppCompatActivity {
     public static final String MY_PREFS_NAME = "MyPrefs";
     private UserDatabase userDatabase;
     ArrayList<UserAttempt> userAttempts;
+    MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,9 @@ public class HistoryActivity extends AppCompatActivity {
         String email = prefs.getString("email", "");
 
         userAttempts = new ArrayList<>();
+
+        mp = MediaPlayer.create(HistoryActivity.this, R.raw.henesys);
+        mp.start();
 
         userAttempts = userDatabase.getAttemptData(email);
         HistoryAdapter adapter = new HistoryAdapter(userAttempts);
@@ -106,5 +111,9 @@ public class HistoryActivity extends AppCompatActivity {
         }
     }*/
 
-
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mp.release();
+    }
 }

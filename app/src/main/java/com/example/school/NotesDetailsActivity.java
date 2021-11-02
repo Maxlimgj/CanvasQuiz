@@ -35,6 +35,8 @@ public class NotesDetailsActivity extends AppCompatActivity {
         tvDateTime.setText(dateTime);
 
 
+
+
         if (!TextUtils.isEmpty(photo)) {
             ivImage.setImageBitmap(getBitmapFromEncodedString(photo));
 

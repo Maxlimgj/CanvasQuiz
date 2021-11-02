@@ -1,6 +1,7 @@
 package com.example.school;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,6 +26,7 @@ public class MathQuizActivity extends AppCompatActivity {
     private int correctQuestion = 0;
     private EditText etAnswer;
     private HashMap<String, String> questionsAnswerMap;
+    MediaPlayer quiz;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,9 @@ public class MathQuizActivity extends AppCompatActivity {
         Intent getIntent = getIntent();
         questionsAnswerMap = (HashMap<String, String>) Utils.getRandomMathQuestions(Constants.QUESTION_SHOWING);
         questions = new ArrayList<>(questionsAnswerMap.keySet());
+
+        quiz = MediaPlayer.create(MathQuizActivity.this, R.raw.dingdong);
+        quiz.start();
 
         tvQuestion = findViewById(R.id.textView8);
         tvQuestionNumber = findViewById(R.id.tvQuestionNumberMath);
@@ -85,6 +90,12 @@ public class MathQuizActivity extends AppCompatActivity {
     private void displayData() {
         tvQuestion.setText(questions.get(currentQuestionIndex) + " = ?");
         tvQuestionNumber.setText("Current Question: " + (currentQuestionIndex + 1));
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        quiz.release();
     }
 
 }

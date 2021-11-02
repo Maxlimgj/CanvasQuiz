@@ -1,13 +1,12 @@
 package com.example.school;
 
-import static android.content.Context.MODE_PRIVATE;
-
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Base64;
@@ -31,6 +30,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class AddTweetDialog extends DialogFragment {
     private static final String TAG = "TweetDialog";
     public static final String MY_PREFS_NAME = "MyPrefs";
@@ -46,6 +47,7 @@ public class AddTweetDialog extends DialogFragment {
     //Bitmap photo;
     String photo = "";
     Bitmap theImage;
+    MediaPlayer mp;
 
     @Nullable
     @Override
@@ -68,8 +70,10 @@ public class AddTweetDialog extends DialogFragment {
                 currentdate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
                 if (tweet.length() > 0) {
                     if (dbHelper.addTweet(tweet, sharedemail, currentTime, currentdate, photo)) {
-                        getDialog().dismiss();
-                        Toast.makeText(getContext(), "Tweet added Successfully", Toast.LENGTH_SHORT).show();
+                        mp = MediaPlayer.create(getContext(), R.raw.jump);
+                        mp.start();
+                        getDialog(                ).dismiss();
+                        Toast.makeText(getContext(), "Notes added Successfully", Toast.LENGTH_SHORT).show();
                         getActivity().getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.fragment_container, new TweetsFragment())
                                 .commit();

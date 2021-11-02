@@ -34,6 +34,7 @@
         <activity android:name=".FinalResultActivity" />
         <activity android:name=".QuizOptionActivity" />
         <activity android:name=".NotesDetailsActivity" />
+        <activity android:name=".AchievementFragment" />
     </application>
 
 </manifest>
