@@ -51,10 +51,15 @@ Contributions are welcome! If you'd like to contribute to the project, please fo
 
 ## Screenshots
 [![Home](https://github.com/Maxlimgj/CanvasQuiz/blob/master/screenshots/home.jpg  =200x)]
- <p align="center">
+<div align="center">
   <img src="https://github.com/Maxlimgj/CanvasQuiz/raw/master/screenshots/home.jpg" alt="Home" width="400">
-</p>
-
-[geography](https://github.com/Maxlimgj/CanvasQuiz/blob/master/screenshots/geoquiz.jpg) 
-[Notes](https://github.com/Maxlimgj/CanvasQuiz/blob/master/screenshots/notetoself.jpg) 
-[Subjects](https://github.com/Maxlimgj/CanvasQuiz/blob/master/screenshots/subjects.jpg)
+</div>
+<div align="center">
+  <img src="https://github.com/Maxlimgj/CanvasQuiz/blob/master/screenshots/geoquiz.jpg" alt="Home" width="400">
+</div>
+<div align="center">
+  <img src="https://github.com/Maxlimgj/CanvasQuiz/blob/master/screenshots/notetoself.jpg" alt="Home" width="400">
+</div>
+<div align="center">
+  <img src="https://github.com/Maxlimgj/CanvasQuiz/blob/master/screenshots/subjects.jpg" alt="Home" width="400">
+</div>
