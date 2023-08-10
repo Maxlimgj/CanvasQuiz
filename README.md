@@ -19,10 +19,10 @@ CanvasQuiz is an Android application designed to provide students with a seamles
 ![Note-Taking](screenshots/note_taking.png)
 
 ## Installation
-
-1. Clone this repository: `git clone https://github.com/your-username/CanvasQuiz.git`
-2. Open the project in Android Studio.
-3. Build and run the app on your Android device or emulator.
+1. Install openJDK 13
+2. Clone this repository: `git clone https://github.com/your-username/CanvasQuiz.git`
+3. Open the project in Android Studio.
+4. Build and run the app on your Android device or emulator.
 
 ## Dependencies
 
@@ -44,15 +44,6 @@ CanvasQuiz is an Android application designed to provide students with a seamles
 
 Contributions are welcome! If you'd like to contribute to the project, please follow these steps:
 
-1. Fork the repository.
-2. Create a new branch for your feature: `git checkout -b feature-name`
-3. Make your changes and commit them: `git commit -m "Add new feature"`
-4. Push to the branch: `git push origin feature-name`
-5. Create a pull request detailing your changes.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgements
 
