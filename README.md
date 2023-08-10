@@ -50,16 +50,13 @@ Contributions are welcome! If you'd like to contribute to the project, please fo
 - MapleStory theme song: [Nexon](https://www.nexon.com/)
 
 ## Screenshots
-[![Home](https://github.com/Maxlimgj/CanvasQuiz/blob/master/screenshots/home.jpg  =200x)]
 <div align="center">
-  <img src="https://github.com/Maxlimgj/CanvasQuiz/raw/master/screenshots/home.jpg" alt="Home" width="400">
-</div>
-<div align="center">
-  <img src="https://github.com/Maxlimgj/CanvasQuiz/blob/master/screenshots/geoquiz.jpg" alt="Home" width="400">
-</div>
-<div align="center">
-  <img src="https://github.com/Maxlimgj/CanvasQuiz/blob/master/screenshots/notetoself.jpg" alt="Home" width="400">
-</div>
-<div align="center">
-  <img src="https://github.com/Maxlimgj/CanvasQuiz/blob/master/screenshots/subjects.jpg" alt="Home" width="400">
+  <table>
+    <tr>
+      <td><img src="https://github.com/Maxlimgj/CanvasQuiz/raw/master/screenshots/home.jpg" alt="Home" width="200"></td>
+      <td><img src="https://github.com/Maxlimgj/CanvasQuiz/raw/master/screenshots/geoquiz.jpg" alt="GeoQuiz" width="200"></td>
+      <td><img src="https://github.com/Maxlimgj/CanvasQuiz/raw/master/screenshots/notetoself.jpg" alt="NoteToSelf" width="200"></td>
+      <td><img src="https://github.com/Maxlimgj/CanvasQuiz/raw/master/screenshots/subjects.jpg" alt="Subjects" width="200"></td>
+    </tr>
+  </table>
 </div>
