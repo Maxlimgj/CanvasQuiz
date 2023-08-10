@@ -50,4 +50,9 @@ Contributions are welcome! If you'd like to contribute to the project, please fo
 - MapleStory theme song: [Nexon](https://www.nexon.com/)
 
 ## Screenshots
-[Home](https://github.com/Maxlimgj/CanvasQuiz/blob/master/screenshots/home.jpg) [geography](https://github.com/Maxlimgj/CanvasQuiz/blob/master/screenshots/geoquiz.jpg) [Notes](https://github.com/Maxlimgj/CanvasQuiz/blob/master/screenshots/notetoself.jpg) [Subjects](https://github.com/Maxlimgj/CanvasQuiz/blob/master/screenshots/subjects.jpg)
+[![Home](https://github.com/Maxlimgj/CanvasQuiz/blob/master/screenshots/home.jpg)]
+
+[](https://github.com/Maxlimgj/CanvasQuiz/blob/master/screenshots/home.jpg) 
+[geography](https://github.com/Maxlimgj/CanvasQuiz/blob/master/screenshots/geoquiz.jpg) 
+[Notes](https://github.com/Maxlimgj/CanvasQuiz/blob/master/screenshots/notetoself.jpg) 
+[Subjects](https://github.com/Maxlimgj/CanvasQuiz/blob/master/screenshots/subjects.jpg)
