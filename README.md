@@ -10,14 +10,6 @@ CanvasQuiz is an Android application designed to provide students with a seamles
 - **Note-Taking**: Take notes directly within the app for easy reference and study.
 - **MapleStory Theme Song**: Enjoy the nostalgic MapleStory theme song while using the app.
 
-## Screenshots
-
-![Login Screen](screenshots/login.png)
-![Quiz Selection](screenshots/quiz_selection.png)
-![Quiz Question](screenshots/quiz_question.png)
-![Quiz Result](screenshots/quiz_result.png)
-![Note-Taking](screenshots/note_taking.png)
-
 ## Installation
 1. Install openJDK 13
 2. Clone this repository: `git clone https://github.com/your-username/CanvasQuiz.git`
